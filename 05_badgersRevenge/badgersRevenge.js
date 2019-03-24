@@ -1,4 +1,7 @@
-console.log("%c--Badger's Revenge Warmup Exercise--", "color: blue; font-size: large; background-color: yellow;");
+console.log(
+  "%c--Badger's Revenge Warmup Exercise--",
+  "color: blue; font-size: large; background-color: yellow;"
+);
 /*
 Badger's Revenge
 The names of those who are witnessed clapping Badger more than twice in the first four days of any one week will go into a draw.
@@ -14,14 +17,13 @@ Include a collection of candidates for the Friday draw (ie, a list of names of p
 Pick a random student to deliver the solution to Friday's warmup.
 If no one has clapped enough that week, the program should indicate that Badger has to do his own damned warmup.
 */
-
-const revengeOfBadger =  {
+const revengeOfBadger = {
   students: {
-    "Alex": 1,
-    "Bob": 2,
-    "Charlie": 3,
-    "Dayse": 4,
-    "Eddie": 5
+    Alex: 1,
+    Bob: 2,
+    Charlie: 3,
+    Dayse: 4,
+    Eddie: 5
   },
 
   shortList: [],
@@ -31,12 +33,12 @@ const revengeOfBadger =  {
     this.shortList = [];
 
     for (let key in this.students) {
-      if(this.students[key] > 2) {
-        this.shortList.push(key)
+      if (this.students[key] > 2) {
+        this.shortList.push(key);
       }
     }
 
-    console.log(this.shortList); // ["Charlie, "Dayse", "Eddie"]
+    //console.log(this.shortList); // ["Charlie, "Dayse", "Eddie"]
     return this.shortList.length;
   },
 
@@ -45,12 +47,12 @@ const revengeOfBadger =  {
     let numberOfCandidates = this.getStudentList(); //3
 
     if (numberOfCandidates > 0) {
-      let randy = Math.floor(Math.random() * numberOfCandidates)
+      let randy = Math.floor(Math.random() * numberOfCandidates);
       //console.log(randy);
-      winner = this.shortList[randy]
+      winner = this.shortList[randy];
     }
 
-    return `winner is ${winner}`
+    return `winner is ${winner}`;
   }
 };
 
