@@ -72,35 +72,66 @@ You can play a :double or a :triple word.
 // console.log(scrabble("hello"));
 
 // 2ª SOLUTION
-const scrabble = {
+// const scrabble = {
+//   letterScore: {
+//     1: ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T' ],
+//     2: ['D', 'G'],
+//     3: ['B', 'C', 'M', 'P'],
+//     4: ['F', 'H', 'V', 'W', 'Y'],
+//     5: ['K'],
+//     8: ['J', 'X'],
+//     10: ['Q', 'Z' ]
+//   },
+
+//   score: function(word){
+//     word = word.toUpperCase();
+//     let sum = 0;
+
+//     for (let i = 0 ; i < word.length; i++) {
+//       let letter = word[i];
+
+//       for(let points in this.letterScore) {
+//         if (this.letterScore[points].includes(letter)) {
+//           sum += Number(points);
+
+//           break;
+//         }
+//       }
+//     }
+//     return `The value of the word "${word}" is ${sum}.`;
+//   }
+// }
+
+// console.log(scrabble.score("hello"));
+// console.log(scrabble.score("scrabble"));
+
+
+// 3º SOLUTION (THE BEST ONE)
+
+const scrabbleAlt = {
   letterScore: {
-    1: ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T' ],
-    2: ['D', 'G'],
-    3: ['B', 'C', 'M', 'P'],
-    4: ['F', 'H', 'V', 'W', 'Y'],
-    5: ['K'],
-    8: ['J', 'X'],
-    10: ['Q', 'Z' ]
+    'a' : 1, 'e' : 1, 'i' : 1, 'o' : 1,
+    'u' : 1, 'l' : 1, 'n' : 1, 'r' : 1,
+    's' : 1, 't' : 1, 'd' : 2, 'g' : 2,
+    'b' : 3, 'c' : 3, 'm' : 3, 'p' : 3,
+    'f' : 4, 'h' : 4, 'v' : 4, 'w' : 4,
+    'y' : 4, 'k' : 5, 'j' : 8, 'x' : 8,
+    'q' : 10, 'z' : 10
   },
 
-  score: function(word){
-    word = word.toUpperCase();
+  scoreAlt: function(word) {
+    word = word.toLowerCase();
     let sum = 0;
 
-    for (let i = 0 ; i < word.length; i++) {
+    for ( let i = 0; i < word.length; i+= 1 ) {
       let letter = word[i];
-
-      for(let points in this.letterScore) {
-        if (this.letterScore[points].includes(letter)) {
-          sum += Number(points);
-
-          break;
-        }
-      }
+      let score = this.letterScore[letter];
+      sum += score;
     }
+
     return `The value of the word "${word}" is ${sum}.`;
   }
-}
+};
 
-console.log(scrabble.score("hello"));
-console.log(scrabble.score("scrabble"));
+console.log(scrabbleAlt.scoreAlt("HELLO"));
+console.log(scrabbleAlt.scoreAlt("SCRABBLE"));
