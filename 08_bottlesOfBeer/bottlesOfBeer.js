@@ -1,6 +1,6 @@
 console.log(
-  "%c--99 bottles of beer Warmup Exercise--",
-  "color: blue; font-size: large; background-color: yellow;"
+  "%c--99 bottles of beer, Warmup Exercise--",
+  "color: blue; background-color: yellow;"
 );
 /*
 99 bottles of beer
@@ -30,3 +30,23 @@ Bonus:
 Count through any number of bottles.
 Be able to count between a range of numbers (ie, 20 to 10).*/
 
+const countBeers = function(fromNumber, toNumber) {
+  for (var i = fromNumber ; i >= toNumber; i--) {
+    const counting = i ;
+    //console.log(counting);
+
+    if (counting === 1) {
+      const OneBottleLyrics = `1 bottle of beer on the wall, 1 bottle of beer. Take it down and pass it around, no more bottles of beer on the wall.`;
+      console.log(OneBottleLyrics);
+    } else if (counting === 0) {
+      const ZeroBottleLyrics = `No more bottles of beer on the wall, no more bottles of beer. Go to the store and buy some more, ${fromNumber} bottles of beer on the wall.`;
+      console.log(ZeroBottleLyrics);
+    } else {
+      const lyrics = `${counting} bottles of beer on the wall, ${counting} bottles of beer. Take one down, pass it around, ${counting -
+        1} bottles of beer on the wall...`;
+      console.log(lyrics);
+    }
+  }
+};
+
+console.log(countBeers(99, 0));
