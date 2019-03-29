@@ -32,25 +32,72 @@ Bonus:
 Have the option of either returning the ages on all planets, or any of the above planets individually.
 */
 
-// version 01
+//version 01
+// const spaceAge = {
+//   data: {
+//     Earth: 1,
+//     Mercury: 0.2408467,
+//     Venys: 0.61519726,
+//     Mars: 1.8808158,
+//     Jupiter: 11.862615,
+//     Saturn: 29.447498,
+//     Uranus: 84.016846,
+//     Neptune: 164.79132
+//   },
+//   calculate: function(input) {
+//     for (let key in this.data) {
+//       console.log(key) //planet`s name
+//       let earthYears = input / 31557600;
+//       let value = this.data[key];
+//       console.log(value)
+//       let age = (earthYears / value).toFixed(2)
+//       console.log(`Your age on ${key} is ${age}`);
+//     }
+//   }
+// }
+// console.log(spaceAge.calculate(1000000000));
+
+
+//solution 02
+
 const spaceAge = {
-  data: {
-    Earth: 1,
-    Mercury: 0.2408467,
-    Venys: 0.61519726,
-    Mars: 1.8808158,
-    Jupiter: 11.862615,
-    Saturn: 29.447498,
-    Uranus: 84.016846,
-    Neptune: 164.79132
-  },
-  calculate: function(input) {
-    for (let key in this.data) {
-      let earthYears = input / 31557600;
-      let value = this.data[key];
-      let age = (earthYears / value).toFixed(2)
-      console.log(`Your age on ${key} is ${age}`);
-    }
-  }
+  earth: 1,
+  mercury: 0.2408467,
+  venus: 0.61519726,
+  mars: 1.8808158,
+  jupiter: 11.862615,
+  saturn: 29.447498,
+  uranus: 84.016846,
+  neptune: 164.79132
 }
-console.log(spaceAge.calculate(1000000000));
+
+
+const age = function(secondsOld){
+
+  const planetYears = Object.entries(spaceAge);
+  console.log(planetYears);
+
+  for (var i = 0 ; i < planetYears.length ; i++ ) {
+
+    console.log(planetYears[i])
+
+    let earthYears = secondsOld / 31557600;   //There are 31557600 seconds in an Earth year.
+    console.log(earthYears)
+
+    // const time = Object.values(spaceAge)[i];
+    const time = planetYears[i][1]
+    // const planets = Object.key(spaceAge)[i];
+    const timeEach = earthYears / time;
+    console.log(`Your age on ${planetYears[i][0]} is ${timeEach}`);
+  }
+
+};
+
+console.log( age(1000000000) );
+
+// My solution with FOR...IN
+
+  // for (const anythingIWant in spaceAge) {
+  //   console.log(anythingIWant)
+  //   console.log(spaceAge[anythingIWant])
+  // }
