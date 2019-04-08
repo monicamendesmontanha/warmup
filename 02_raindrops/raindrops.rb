@@ -16,37 +16,53 @@
 
 # New file setup today. You will need to create a raindrops.rb file that can be executable in your terminal.
 
-require 'pry'
+# require 'pry'
 
-puts "Enter a numer: "
-number = gets.to_i
+# puts "Enter a numer: "
+# number = gets.to_i
 
-def isAFactor(number, factor)
-  number % factor == 0
-end
+# def isAFactor(number, factor)
+#   number % factor == 0
+# end
 
-def raindrops(number)
-  string = ""
+# def raindrops(number)
+#   string = ""
 
-  if isAFactor(number, 3)
-    string += "Pling"
-  end
+#   if isAFactor(number, 3)
+#     string += "Pling"
+#   end
 
-  if isAFactor(number, 5)
-    string += "Plang"
-  end
+#   if isAFactor(number, 5)
+#     string += "Plang"
+#   end
 
-  if isAFactor(number, 7)
-    string += "Plong"
-  end
+#   if isAFactor(number, 7)
+#     string += "Plong"
+#   end
 
-  if string.length == 0
-    string += number.to_s
-  end
+#   if string.length == 0
+#     string += number.to_s
+#   end
 
-  p string
+#   p string
 
-end
+# end
 
-raindrops(number)
+# raindrops(number)
 # binding.pry
+
+
+# Version 2
+
+def raindrops num
+  output = ""
+  output << "Pling" if num % 3 == 0
+  output << "Plang" if num % 5 == 0
+  output << "Plong" if num % 7 == 0
+  output.empty? ? num.to_s : output
+end
+
+puts raindrops 28
+puts raindrops 1755
+puts raindrops 34
+puts raindrops 105
