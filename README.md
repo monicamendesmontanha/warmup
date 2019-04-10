@@ -14,3 +14,4 @@ Do warmups. The best way to start a programming's day, after a brekky, in my rou
 1. **99 Bottles of Beer**
 1. **Space Age**
 1. **Text Soup: Trump Edition**
+1. **Nucleotide Count**
