@@ -18,7 +18,8 @@ class SimpleSums
 
   def s2
     # calculate the addition from 1 to n
-    @number*(@number +1))/2
+    #@number*(@number +1))/2
+    (1..@number).sum
   end
 
 
