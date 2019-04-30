@@ -20,4 +20,4 @@ Do warmups. The best way to start a programming's day, after a brekky, in my rou
 1. **Robot Name**
 1. **Roman Numerals**
 1. **Luhn Formula**
-1. **Alergies**
+1. **Allergies**
