@@ -22,3 +22,4 @@ Do warmups. The best way to start a programming's day, after a brekky, in my rou
 1. **Luhn Formula**
 1. **Allergies**
 1. **Atbash Cipher**
+1. **Flatten and Reverse**
