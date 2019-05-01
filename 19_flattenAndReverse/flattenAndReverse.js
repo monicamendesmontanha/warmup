@@ -24,12 +24,28 @@ console.log(
 // 2) To do this I'll need to loop through the array from the end to the beginning, because I want the last element to be first.
 // 3) I want to output the contents of 'newArray' when the for loop is finished.
 
-var myArray = [1, 2, 3, 4]
 
-var reverseMyArray = function(arr) {
-  var newArray = [];
-  for (var i = arr.length - 1; i >= 0; i--) {
-    newArray.push(arr[i]);
+//version 1
+// const myArray = [1, 2, 3, 4]
+
+// const reverseMyArray = function(arr) {
+//   let newArray = [];
+//   for (var i = arr.length - 1; i >= 0; i--) {
+//     newArray.push(arr[i]);
+//   }
+//   return newArray
+// }
+
+// console.log(reverseMyArray(myArray))
+
+
+//version 2
+const myArray = [1, 2, 3, 4]
+
+const reverseMyArray = function(arr) {
+  let newArray = [];
+  for (var i = 0; i < arr.length; i++) {
+    newArray.unshift(arr[i]);
   }
   return newArray
 }
