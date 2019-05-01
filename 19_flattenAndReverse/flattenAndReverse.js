@@ -3,11 +3,15 @@ console.log(
   "color: blue; background-color: yellow;"
 );
 
+const myArray = function(arr) {
+  return arr.reverse()
+};
 
-myArray = [1, 2, 3, 4]
+console.log(myArray([1, 2, 3, 4]))
 
-console.log(myArray.reverse())
 
-myFlat = ["Hello", ["World", 42] ]
+const myFlat = function(arr) {
+  return arr.flat()
+};
 
-console.log(myFlat.flat())
+console.log(myFlat( ["Hello", ["World", 42] ] ))
