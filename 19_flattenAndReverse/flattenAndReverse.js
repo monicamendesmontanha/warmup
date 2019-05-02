@@ -18,7 +18,7 @@ console.log(
 
 
 ////////////////////////////////////////////////
-// Solution without methods
+// Solution without method reverse
 ////////////////////////////////////////////////
 // 1) I want to take the last element of the array, then add it to the newArray.
 // 2) To do this I'll need to loop through the array from the end to the beginning, because I want the last element to be first.
@@ -26,12 +26,26 @@ console.log(
 
 
 //version 1
+const myArray = [1, 2, 3, 4]
+
+const reverseMyArray = function(arr) {
+  let newArray = [];
+  for (var i = arr.length - 1; i >= 0; i--) {
+    newArray.push(arr[i]);
+  }
+  return newArray
+}
+
+console.log(reverseMyArray(myArray))
+
+
+//version 2
 // const myArray = [1, 2, 3, 4]
 
 // const reverseMyArray = function(arr) {
 //   let newArray = [];
-//   for (var i = arr.length - 1; i >= 0; i--) {
-//     newArray.push(arr[i]);
+//   for (var i = 0; i < arr.length; i++) {
+//     newArray.unshift(arr[i]);
 //   }
 //   return newArray
 // }
@@ -39,15 +53,32 @@ console.log(
 // console.log(reverseMyArray(myArray))
 
 
-//version 2
-const myArray = [1, 2, 3, 4]
+////////////////////////////////////////////////
+// Solution without method flat
+////////////////////////////////////////////////
 
-const reverseMyArray = function(arr) {
+
+const myArray2 = ["Hello", ["World", 42] ]
+
+const flatMyArray = function(arr) {
   let newArray = [];
-  for (var i = 0; i < arr.length; i++) {
-    newArray.unshift(arr[i]);
+
+  for (let i = 0; i < arr.length; i++) {
+    let currentElem = arr[i]
+
+    if (currentElem instanceof Array) {
+      // console.log("This is an instance of an array");
+
+      for (let j = 0 ; j < currentElem.length; j++) {
+        newArray.push(currentElem[j]);
+      }
+    } else {
+        newArray.push(currentElem)
+    }
+
   }
+  console.log(newArray)
   return newArray
 }
 
-console.log(reverseMyArray(myArray))
+console.log(flatMyArray(myArray2))
