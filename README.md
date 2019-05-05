@@ -24,3 +24,4 @@ Do warmups. The best way to start a programming's day, after a brekky, in my rou
 1. **Atbash Cipher**
 1. **Flatten and Reverse**
 1. **Text Soup 2: The Widgeting**
+1. **Pairwise**
