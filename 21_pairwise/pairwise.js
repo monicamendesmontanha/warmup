@@ -3,7 +3,7 @@ console.log(
   "color: blue; background-color: yellow;"
 );
 
-const pairwise = (array, arg) =>
+const pairwise = (array, sum) =>
     /*
     Primeiro laço (reduce) com os numeros recebidos no array
     Inicio o reduce com um array contendo 2 posições,
@@ -21,7 +21,7 @@ const pairwise = (array, arg) =>
             Os indices já utilizados, são inseridos no objeto, presente na segunda posição
             do acumulador do reduce, pois serão fundamentais na validação da condição
             */
-            if (currentValue + currentValue2 === arg && indexR !== indexF && !accumulator[1][indexR] && !accumulator[1][indexF]) {
+            if (currentValue + currentValue2 === sum && indexR !== indexF && !accumulator[1][indexR] && !accumulator[1][indexF]) {
               accumulator[0] += (indexR + indexF)
               accumulator[1][indexR] = true
               accumulator[1][indexF] = true
