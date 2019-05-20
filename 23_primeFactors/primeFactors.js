@@ -15,7 +15,9 @@ const primeFactors = num => {
       factorsArray.push(i)
 
       // console.log("found factor", i, "factorsArray", factorsArray);
+
       num = num/i
+      // console.log("out of while loop; now test i <= num", i, num);
     }
   }
 
